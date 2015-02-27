@@ -1,0 +1,28 @@
+<html>
+    <head>
+    <meta http-equiv='refresh' content='1'>
+    <title>{% block head_title %}Siliqua [SLQA]{% endblock %}</title>
+    </head>
+    <style>
+        *{
+          padding: 0px;
+          margin: 0px;
+          background-color: #32373D;
+        }
+
+        h2{
+            color:green;
+        }
+        header{
+            background-color:red;
+
+        }
+
+    </style>
+    <body>
+        <h1>{% block title %}  {% endblock %}</h1>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>

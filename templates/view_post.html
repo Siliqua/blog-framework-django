@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+
+    <style>
+        *{
+          padding: 0px;
+          margin: 0px;
+          background-color: #32373D;
+        }
+        body{
+            width: 1100px;
+            margin: 0 auto;
+        }
+        .top{
+            background-color: #32373D;
+            width: 100%;
+            height: 80px;
+        }
+        .rodape{
+
+            background-color: #32373D;
+            width: 100%;
+            height: 50px;
+        }
+        .clear{
+            clear: both;
+        }
+        header{
+            width: 100%;
+            height: 100px;
+            background-color:#39CF8F;
+            border-bottom: 30px solid #36916C;
+        }
+        .tudo{
+            background-color: #E9EBED;
+            width: 100%;
+            min-height: 400px;
+            float: left;
+        }
+        article{
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 10px;
+            background-color: #FFFFFF;
+        }
+        .imagem{
+            border-left: 5px solid #39D091;
+            background-color: transparent;
+            text-align: center;
+        }
+        .titulo{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: transparent;
+            text-align: center;
+            font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+            border-left: 5px solid #39D091;
+            font-size: 28px;
+            color: #32373D;
+        }
+        .data{
+            border-left: 5px solid #39D091;
+            text-align: right;
+            background-color: transparent;
+            color: #32373D;
+            font-size: 12px;
+            text-decoration: none;
+            list-style-type: none;
+            background-color: transparent;
+            margin-right: 50px;
+            padding-bottom: 10px;
+            font-family:'Lobster', arial, serif;
+        }
+        h1{
+            padding-top: 30px;
+            background-color: transparent;
+            text-align: center;
+            font-family:'Lobster', arial, serif;
+            font-size: 40px;
+            color:#FFFFFF;
+        }
+        .emBranco{
+            background-color: #E9EBED;
+            width: 100%;
+            height: 20px;
+        }
+
+        .categorias a{
+            background-color: transparent;
+            color: #32373D;
+            text-decoration: none;
+
+        }
+        .categorias{
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            padding-top: 15px;
+            background-color: transparent;
+        }
+        h3{
+            color: #CCCCCC;
+            background-color: transparent;
+        }
+        .componentes{
+            background-color: transparent;
+            color: #32373D;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            padding-top: 15px;
+            background-color: transparent;
+        }
+        .post{
+            background-color: transparent;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: justify;
+            padding-left: 50px;
+            padding-right: 50px;
+            border-left: 5px solid #39D091;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+
+    </head>
+        <body>
+            <div class="top" ></div>
+            <header>
+
+                  <a href="http://127.0.0.1:8000/"><h1> Blog Siliqua </h1></a>
+
+             </header>
+
+
+
+             <aside></aside>
+
+        <div class="tudo" >
+            <article>
+
+              <div class="titulo">  {% block head_title %}{{ post.titulo }}{% endblock %}</div>
+
+
+
+                {% block content %}
+                    <div class="post">{{ post.body }}</div>
+                {% endblock %}
+                <div class="data">{{ post.posted}}</div>
+
+
+
+
+
+            </article>
+        </div>
+        <div class="clear" ></div>
+        <div class="rodape" ></div>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+
+    <style>
+        *{
+          padding: 0px;
+          margin: 0px;
+          background-color: #32373D;
+        }
+        body{
+            width: 1100px;
+            margin: 0 auto;
+        }
+        .top{
+            background-color: #32373D;
+            width: 100%;
+            height: 80px;
+        }
+        .rodape{
+
+            background-color: #32373D;
+            width: 100%;
+            height: 50px;
+        }
+        .clear{
+            clear: both;
+        }
+        header{
+            width: 100%;
+            height: 100px;
+            background-color:#39CF8F;
+            border-bottom: 30px solid #36916C;
+        }
+        .tudo{
+            background-color: #E9EBED;
+            width: 800px;
+            min-height: 1500px;
+            float: left;
+        }
+        article{
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 10px;
+            background-color: #FFFFFF;
+        }
+        .resumo{
+            background-color: transparent;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: justify;
+            padding-left: 50px;
+            padding-right: 50px;
+            border-left: 5px solid #39D091;
+        }
+        .imagem img{
+            margin-left: 35px;
+        }
+        .titulo{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: transparent;
+            text-align: center;
+            font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+            color: #CCC;
+            border-left: 5px solid #39D091;
+        }
+        .titulo a{
+            background-color: transparent;
+            color: #32373D;
+            font-size: 18px;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        .titulo a:hover{
+            color: #39CF8F;
+        }
+        .data{
+            border-left: 5px solid #39D091;
+            text-align: right;
+            background-color: transparent;
+            color: #32373D;
+            font-size: 12px;
+            text-decoration: none;
+            list-style-type: none;
+            background-color: transparent;
+            margin-right: 40px;
+            padding-bottom: 10px;
+            font-family:'Lobster', arial, serif;
+        }
+        h1{
+            padding-top: 30px;
+            background-color: transparent;
+            text-align: center;
+            font-family:'Lobster', arial, serif;
+            font-size: 40px;
+            color:#FFFFFF;
+        }
+        a{
+            text-decoration: none;
+        }
+        .emBranco{
+            background-color: #E9EBED;
+            width: 100%;
+            height: 20px;
+        }
+        aside{
+            text-align: justify;
+            padding-top: 20px;
+            background-color: #E9EBED;
+            width: 300px;
+            min-height: 1480px;
+            float:right;
+        }
+        .categorias a{
+            background-color: transparent;
+            color: #32373D;
+            text-decoration: none;
+
+        }
+        .categorias{
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            padding-top: 15px;
+            background-color: transparent;
+        }
+        h3{
+            color: #CCCCCC;
+            background-color: transparent;
+        }
+        .componentes{
+            background-color: transparent;
+            color: #32373D;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            padding-top: 15px;
+            background-color: transparent;
+        }
+        .resumo a{
+            background-color: transparent;
+            color: #32373D;
+            font-size: 18px;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        .resumo a:hover{
+            color: #39CF8F;
+        }
+    </style>
+
+    </head>
+        <body>
+            <div class="top" ></div>
+            <header>
+                {% block title %}
+                  <a href="http://127.0.0.1:8000/"><h1> Blog Siliqua </h1></a>
+                {% endblock %}
+             </header>
+
+             {% block content %}
+
+             <aside>
+
+                 <h3> COMPONENTES </h3>
+                     <div class="componentes">
+                         # Breno Lessa <br><br>
+                         # Dhiego Morais <br><br>
+                         # Hugo Brito <br><br>
+                         # Maiane Salomão <br><br>
+                         # Matheus Sampaio <br><br>
+                         # Moara Brito <br><br>
+                     </div>
+                     <br>
+                 <h3> CATEGORIAS </h3>
+                 {% if categorias %}
+
+                    {% for categoria in categorias %}
+                        <div class="categorias"># <a href="{{ categoria.get_absolute_url }}">{{ categoria.titulo }}</a></div>
+                    {% endfor %}
+
+            {% else %}
+            <p>There are no posts.</p>
+            {% endif %}
+             </aside>
+
+
+
+        <div class="tudo" >
+            <article>
+
+            {% if posts %}
+
+                    {% for post in posts %}
+
+                           <div class="titulo"><a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a></div>
+                           <div class="resumo">{{ post.resumo}} <a href="{{ post.get_absolute_url }}">(Leia mais...)</a></div>
+                           <div class="data">{{ post.posted}}</div>
+                           <div class="emBranco"></div>
+
+
+
+                    {% endfor %}
+
+            {% else %}
+            <p>There are no posts.</p>
+            {% endif %}
+            </article>
+        </div>
+        <div class="clear" ></div>
+            {% endblock %}
+        <div class="rodape" ></div>
+    </body>
+</html>
