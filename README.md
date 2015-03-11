@@ -17,7 +17,7 @@ Recursos: Python v.2.7 e framework Django v.1.5.
 - Hugo Brito [**hugobrito**](https://github.com/huggobrito)
 - Maiane Salomão [**maisalomao**](https://github.com/Maiane)
 - Matheus Sampaio [**matheusSampaio**](https://github.com/igoromero)
-- Moara Brito (scrum master) [**moarabritto**](https://github.com/moarabrito)
+- Moara Brito (Scrum Master) [**moarabritto**](https://github.com/moarabrito)
 
 ---------------------------------------------------------------------------------------------------
 
